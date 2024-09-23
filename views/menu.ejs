@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
     <style>
-        .underline { 
+        .underline {
             text-decoration: underline;
         }
     </style>
@@ -13,10 +13,14 @@
 <body>
     <%- include('./partials/nav') %>
     <h1>Full Menu</h1>
+
     <h2 class="underline">Mains</h2>
     <% menu.forEach(item => { %>
         <% if (item.category === 'mains') { %>
-            <h3><%= item.name %></h3>
+            <h3>
+                <%= item.name %>
+                <% if (item.rating === 5) { %> ⭐ <% } %>
+            </h3>
             <p>Price: $<%= item.price %></p>
             <p>Rating: <%= item.rating %> stars</p>
             <p>Details: <%= item.details %></p>
@@ -26,7 +30,10 @@
     <h2 class="underline">Desserts</h2>
     <% menu.forEach(item => { %>
         <% if (item.category === 'desserts') { %>
-            <h3><%= item.name %></h3>
+            <h3>
+                <%= item.name %>
+                <% if (item.rating === 5) { %> ⭐ <% } %>
+            </h3>
             <p>Price: $<%= item.price %></p>
             <p>Rating: <%= item.rating %> stars</p>
             <p>Details: <%= item.details %></p>
@@ -36,7 +43,10 @@
     <h2 class="underline">Sides</h2>
     <% menu.forEach(item => { %>
         <% if (item.category === 'sides') { %>
-            <h3><%= item.name %></h3>
+            <h3>
+                <%= item.name %>
+                <% if (item.rating === 5) { %> ⭐ <% } %>
+            </h3>
             <p>Price: $<%= item.price %></p>
             <p>Rating: <%= item.rating %> stars</p>
             <p>Details: <%= item.details %></p>
